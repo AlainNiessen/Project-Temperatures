@@ -1,0 +1,206 @@
+---JEUX DE TEST---
+
+1) On met les mêmes températures que dans l'exemple du projet et voir si on obtient les mêmes résultats
+
+    a) 25
+    b) 18
+    c) 13.5
+    d) 23
+    e) 21
+    f) 6.5
+    g) 14.5
+
+    Résultat attendu:
+
+    La température maximale est 25°C.
+    Jour de relevage : lundi 
+
+    La température minimale est 6.5°C 
+    Jour de relevage : samedi 
+
+    La température moyenne de cette semaine est 17.35°C
+
+
+     |-5|00|05|10|15|20|
+    L|**|**|**|**|**|**| // Température = 25°C
+    M|**|**|**|**|* |  | // Température = 18°C
+    M|**|**|**|* |  |  | // Température = 13.5°C
+    J|**|**|**|**|**|* | // Température = 23°C
+    V|**|**|**|**|**|  | // Température = 21°C
+    S|**|**|  |  |  |  | // Température = 6.5°C
+    D|**|**|**|* |  |  | // Température = 14.5°C
+
+2) Quelques températures avec le même degrés Celsius pour voir si plusieurs jours (max ou min) sont affichés + affichage max + affichage min
+
+    a) -1
+    b) 3
+    c) 2
+    d) -1
+    e) 2
+    f) 4
+    g) -1
+
+    Résultat attendu:
+
+    La température maximale est 4°C.
+    Jour de relevage : samedi 
+
+    La température minimale est -1°C 
+    Jours de relevage : lundi jeudi dimanche 
+
+    La température moyenne de cette semaine est 1.14°C
+
+
+     |-5|00|05|10|15|20|
+    L|* |  |  |  |  |  | // Température = -1°C
+    M|**|* |  |  |  |  | // Température = 3°C
+    M|**|  |  |  |  |  | // Température = 2°C
+    J|* |  |  |  |  |  | // Température = -1°C
+    V|**|  |  |  |  |  | // Température = 2°C
+    S|**|* |  |  |  |  | // Température = 4°C
+    D|* |  |  |  |  |  | // Température = -1°C
+
+
+3) On change la taille du tableau jours pour modifier l'affichage (dans ce cas jours = ["lundi", "mardi", "mercredi"])
+    a) 4
+    b) 8
+    c) 9
+    
+    Résultat attendu:
+
+    La température maximale est 9°C.
+    Jour de relevage : mercredi
+
+    La température minimale est 4°C 
+    Jour de relevage : lundi
+
+    La température moyenne de cette semaine est 7°C
+
+
+     |-5|00|05|10|15|20|
+    L|**|* |  |  |  |  | // Température = 4°C
+    M|**|**|* |  |  |  | // Température = 8°C
+    M|**|**|* |  |  |  | // Température = 9°C
+
+
+4) on met partout la même valeur pour voir l'affichage des jours => les jours devraient être affichés pour la valeur max ET pour la valeur minimale
+   et affichage correcte du bargraphe
+
+    a) -5
+    b) -5
+    c) -5
+    d) -5
+    e) -5
+    f) -5
+    g) -5
+
+    Résultat attendu:
+
+    La température maximale est -5°C.
+    Jours de relevage : lundi mardi mercredi jeudi vendredi samedi dimanche 
+
+    La température minimale est -5°C 
+    Jours de relevage : lundi mardi mercredi jeudi vendredi samedi dimanche 
+
+    La température moyenne de cette semaine est -5°C
+
+
+     |-5|00|05|10|15|20|
+    L|  |  |  |  |  |  | // Température = -5°C
+    M|  |  |  |  |  |  | // Température = -5°C
+    M|  |  |  |  |  |  | // Température = -5°C
+    J|  |  |  |  |  |  | // Température = -5°C
+    V|  |  |  |  |  |  | // Température = -5°C
+    S|  |  |  |  |  |  | // Température = -5°C
+    D|  |  |  |  |  |  | // Température = -5°C
+
+5) on rends des valeurs invalides (isNan ou plus petit que -5 ou plus grand que 25)
+
+    a) m
+    b) -6
+    c) 26
+    d) 15
+
+    Résultat attendu:
+
+    Avant rentrée:
+    Veuillez introduire une température entre -5 et 25 pour lundi
+
+    Après rentrée a:
+    La valeur rentrée est invalide
+    Veuillez introduire une température entre -5 et 25 pour lundi
+
+    Après rentrée b:
+    La valeur rentrée est invalide
+    Veuillez introduire une température entre -5 et 25 pour lundi
+
+    Après rentrée c:
+    La valeur rentrée est invalide
+    Veuillez introduire une température entre -5 et 25 pour lundi
+
+    Après rentrée d:
+    Veuillez introduire une température entre -5 et 25 pour mardi
+
+
+6) on met une série des valeurs pour voir si toutes les valeurs sont le plus proche possible par rapport aux valeurs de bargraphe
+
+    a) 7.3
+    b) 7.4
+    c) 7.5
+    d) 7.6
+    e) 7.7
+    f) 7.8
+    g) 7.9
+
+    Résultat attendu:
+
+    La température maximale est 7.9°C.
+    Jour de relevage : dimanche 
+
+    La température minimale est 7.3°C 
+    Jour de relevage : lundi 
+
+    La température moyenne de cette semaine est 7.6°C
+
+
+     |-5|00|05|10|15|20|
+    L|**|**|  |  |  |  | // Température = 7.3°C => 7.3 est plus proche à 5 que à 10
+    M|**|**|  |  |  |  | // Température = 7.4°C => idem
+    M|**|**|* |  |  |  | // Température = 7.5°C => à partir de 7.5, les valeurs sont plus proche à 10 donc une étoile en plus
+    J|**|**|* |  |  |  | // Température = 7.6°C
+    V|**|**|* |  |  |  | // Température = 7.7°C
+    S|**|**|* |  |  |  | // Température = 7.8°C
+    D|**|**|* |  |  |  | // Température = 7.9°C
+
+7) test pour voir si la moyenne est bien affiché avec deux places derrière la virgule + affichage correcte de moy
+
+    a) 6.597
+    b) 2.379
+    c) 1.468
+    d) 19.235
+    e) 15.326
+    f) 20.791
+    g) 24.999
+
+    Resultat attendu:
+
+    La température maximale est 24.999°C.
+    Jour de relevage : dimanche 
+
+    La température minimale est 1.468°C 
+    Jour de relevage : mercredi 
+
+    La température moyenne de cette semaine est 12.97°C
+
+
+     |-5|00|05|10|15|20|
+    L|**|**|  |  |  |  | // Température = 6.597°C
+    M|**|  |  |  |  |  | // Température = 2.379°C
+    M|**|  |  |  |  |  | // Température = 1.468°C
+    J|**|**|**|**|* |  | // Température = 19.235°C
+    V|**|**|**|**|  |  | // Température = 15.326°C
+    S|**|**|**|**|**|  | // Température = 20.791°C
+    D|**|**|**|**|**|* | // Température = 24.999°C
+
+    
+
